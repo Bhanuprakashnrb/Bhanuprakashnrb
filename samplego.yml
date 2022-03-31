@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: samplego
+  labels:
+    applications: go 
+    location: bangalore 
+    owner: bhanu
+spec:
+  selector:
+    matchLabels:
+      app: samplego
+  template:
+    metadata:
+      labels:
+        app: samplego
+    spec:
+      containers:
+      - name: samplego  
+        image: bhanunr/samplego:v1
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 9004

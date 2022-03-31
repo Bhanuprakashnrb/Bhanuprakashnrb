@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: samplego
+spec:
+  selector:
+    applications: go
+  ports:
+  - port: 9023
+    targetPort: 9004
